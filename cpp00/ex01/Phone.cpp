@@ -5,7 +5,7 @@
 
 int adding(Contact contact)
 {
-	std::string first_name;
+	char *first_name;
 
 	std::cout << "first name : ";
 	std::cin >> first_name;
@@ -14,8 +14,6 @@ int adding(Contact contact)
 
 int searching(Contact contact)
 {
-	std::string name;
-
 	contact.printFirstName();
 	return (1);
 }
@@ -31,10 +29,13 @@ int main()
 	while (test != out)
 	{
 		std::cin >> test;
+		std::cout << "test" << std::endl;
 		if (test == add)
 			adding(premier);
 		if (test == search)
+		{
 			searching(premier);
+		}
 	}
 	return (0);
 }

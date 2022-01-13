@@ -5,12 +5,11 @@
 
 Contact::Contact()
 {
-
 }
 
-void Contact::addFirstName(std::string new_first_name)
+void Contact::modifyFirstName(char *new_first_name)
 {
-		first_name = new_first_name;
+	this->first_name = new_first_name;
 }
 
 void Contact::printFirstName()

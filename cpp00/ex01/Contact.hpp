@@ -1,16 +1,18 @@
-#include <cctype>
-#include <cstring>
-#include <iostream>
+
+#ifndef CONTACT_H
+# define CONTACT_H
 
 class Contact {
 	public :
 		Contact();
-		void addFirstName(std::string new_first_name);
+		void modifyFirstName(char *new_first_name);
+		void getFisrtName();
 		void printFirstName();
 	private :
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		char *first_name;
+		char *last_name;
+		char *nickname;
+		char *phone_number;
+		char *darkest_secret;
 };
+#endif
