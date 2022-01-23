@@ -50,24 +50,52 @@ void Contact::printList2(std::string to_print)
 
 	x = 0;
 	std::cout << "|";
-	while (x < 9)
+	while (to_print[x] && x < 9)
 	{
-		if (to_print[x] != 0)
-			std::cout << to_print[x];
-		else
-			std::cout << " ";
 		x++;
 	}
-	if (to_print[x + 1] != 0)
-		std::cout << ".";
-	else if (to_print[x] != 0)
-		std::cout << to_print[x];
+	if (x < 9)
+	{
+		while (x < 10)
+		{
+			std::cout << " ";
+			x++;
+		}
+		x = 0;
+		while (to_print[x])
+		{
+			std::cout << to_print[x];
+			x++;
+		}
+	}
 	else
-		std::cout << " ";
+	{
+		x = 0;
+		while (to_print[x] && x < 9)
+		{
+			std::cout << to_print[x];
+			x++;
+		}
+		if (to_print[x + 1] != 0)
+		{
+
+			std::cout << ".";
+		}
+		else if (to_print[x] != 0)
+		std::cout << to_print[x];
+	}
 }
 
 void Contact::printList(int x)
 {
+	int len;
+
+	len = 0;
+	while (len < 9)
+	{
+		std::cout << " ";
+		len++;
+	}
 	std::cout << x;
 	this->printList2(this->first_name);
 	this->printList2(this->last_name);

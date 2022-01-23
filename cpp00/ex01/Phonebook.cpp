@@ -1,6 +1,8 @@
 #include <cctype>
 #include <cstring>
 #include <iostream>
+#include <numeric>
+#include <iterator>
 #include "./Phonebook.hpp"
 
 Phonebook::Phonebook()
@@ -16,7 +18,6 @@ Phonebook::~Phonebook()
 int Phonebook::listen()
 {
   int x;
-  int bufnumber;
   std::string buf;
 
   std::cout << std::endl;
@@ -46,14 +47,14 @@ int Phonebook::listen()
         this->list[x].printList(x + 1);
         x++;
       }
-      std::cout << "wich contact want you see ? Enter a number" << std::endl;
-      std::cin >> bufnumber;
-      while (bufnumber > x || bufnumber < 1)
+      std::cout << "wich contact want you to see ? Enter a number" << std::endl;
+      std::cin >> buf;
+      while (buf[1] || (buf[0] < '0' || buf[0] > '9'))
       {
         std::cout << "the contact selected not exist, select an other contact please" << std::endl;
-        std::cin >> bufnumber;
+        std::cin >> buf;
       }
-      this->list[bufnumber - 1].printAll();
+      this->list[buf[0] - 49].printAll();
     }
     else
     {
