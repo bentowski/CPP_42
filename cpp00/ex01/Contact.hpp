@@ -5,14 +5,18 @@
 class Contact {
 	public :
 		Contact();
-		void modifyFirstName(char *new_first_name);
-		void getFisrtName();
-		void printFirstName();
+		~Contact();
+		void	addContact(int x);
+		int		isExist();
+		void	printList(int x);
+		void	printList2(std::string to_print);
+		void	printAll();
 	private :
-		char *first_name;
-		char *last_name;
-		char *nickname;
-		char *phone_number;
-		char *darkest_secret;
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string phone_number;
+		std::string darkest_secret;
+		int		exist;
 };
 #endif

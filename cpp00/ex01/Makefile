@@ -3,7 +3,7 @@
 NAME = xSmallPhoneBook
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror
-SRCS	=	Contact.cpp Phone.cpp
+SRCS	=	main.cpp Contact.cpp Phonebook.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
