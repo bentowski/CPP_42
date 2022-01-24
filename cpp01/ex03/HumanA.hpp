@@ -4,12 +4,11 @@
 
 class HumanA {
 	public:
-		HumanA( std::string newName, Weapon newWeapon );
+		HumanA( std::string newName, Weapon& newWeapon );
 		~HumanA( void );
 		void attack( void );
-		void setWeapon( Weapon weapon );
 	private:
-		Weapon weapon;
+		Weapon& weapon;
 		std::string name;
 };
 #endif

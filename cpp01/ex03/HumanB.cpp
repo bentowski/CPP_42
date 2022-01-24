@@ -2,8 +2,6 @@
 
 HumanB::HumanB( std::string newName) : name(newName)
 {
-		std::string test = "none";
-		this->weapon = Weapon(test);
 		return ;
 }
 
@@ -14,7 +12,8 @@ HumanB::~HumanB( void )
 
 void HumanB::attack( void )
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::string to_print = this->weapon->getType();
+	std::cout << this->name << " attacks with their " << &to_print << std::endl;
 }
 
 void HumanB::setWeapon( Weapon weapon)

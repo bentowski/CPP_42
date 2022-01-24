@@ -9,7 +9,7 @@ class HumanB {
 		void attack( void );
 		void setWeapon( Weapon weapon );
 	private:
-		Weapon weapon = Weapon("none");
+		Weapon* weapon;
 		std::string name;
 };
 #endif
