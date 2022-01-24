@@ -32,7 +32,7 @@ void Contact::addContact(int contact_number)
 	while (x < 5)
 	{
 		std::cout << msg[x] << " : ";
-		std::cin >> buf[x];
+		std::getline(std::cin, buf[x]);
 		x++;
 	}
 	this->first_name = buf[0];
