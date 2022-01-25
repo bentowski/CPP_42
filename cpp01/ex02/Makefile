@@ -1,6 +1,6 @@
 # the compiler: gcc for C program, define as g++ for C++
 
-NAME = ref_ex
+NAME = brain
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
 SRCS	=	main.cpp
