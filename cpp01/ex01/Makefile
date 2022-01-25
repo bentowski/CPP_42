@@ -1,6 +1,6 @@
 # the compiler: gcc for C program, define as g++ for C++
 
-NAME = Zombie
+NAME = hordeOfZombie
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
 SRCS	=	main.cpp Zombie.cpp ZombieHorde.cpp
