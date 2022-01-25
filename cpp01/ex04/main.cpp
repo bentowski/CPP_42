@@ -2,41 +2,45 @@
 #include <cstring>
 #include <iostream>
 
-int main(int argc, char **argv)
-{
-	std::string line;
-	std::string newLine;
-	std::ifstream file(argv[1]);
-	std::string fileout = argv[1];
-	fileout += ".replace";
-	std::ofstream out(fileout, std::ofstream::out);
-	int x;
-	int y;
+int main(int ac, char **av) {
 
-	while (std::getline(file, line))
-	{
-		x = 0;
-		while (line[x])
-		{
-			if (line[x] == argv[2][0])
-			{
-				y = 0;
-				while (line[x + y] && line[x + y] == argv[2][y])
-				{
-					y++;
+	if (ac == 4) {
+		std::ifstream ifs(av[1]);
+		if (ifs.good()) {
+			std::string line;
+			line = av[1];
+			line.append(".replace");
+			std::ofstream ofs(line);
+			int x = 0;
+			int y = 0;
+
+			while (std::getline(ifs, line)) {
+				x = 0;
+				while (line[x]) {
+					if (line[x] == av[2][0]) {
+						y = 0;
+						while (line[x + y] && line[x + y] == av[2][y]) {
+							y++;
+						}
+						if (!av[2][y]) {
+							ofs << av[3];
+							x = x + y - 1;
+						}
+						else
+							ofs << line[x];
+					}
+					else
+						ofs << line[x];
+					x++;
 				}
-				if (!argv[2][y])
-				{
-					out << argv[3];
-					x = x + y - 1;
-				}
-				else
-					out << line[x];
+				ofs << std::endl;
 			}
-			else
-				out << line[x];
-			x++;
+			ifs.close();
+			ofs.close();
+			return (0);
 		}
-		out << std::endl;
+		ifs.close();
 	}
+	std::cout << "Error" << std::endl;
+	return (1);
 }
