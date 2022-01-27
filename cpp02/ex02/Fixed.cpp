@@ -16,7 +16,7 @@ Fixed::Fixed( int const src)
 
 Fixed::Fixed( float const src)
 {
-	this->_n = (int)roundf(src * pow(2, this->_b));
+	this->_n = (int)(src * pow(2, this->_b));
 	return ;
 }
 
