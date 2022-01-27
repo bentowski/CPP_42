@@ -11,16 +11,16 @@ class Fixed {
 		~Fixed ( void );
 
 		int& operator=(Fixed const & src);
-		int& operator>(Fixed const & src);
-		int& operator<(Fixed const & src);
-		int& operator>=(Fixed const & src);
-		int& operator<=(Fixed const & src);
-		int& operator==(Fixed const & src);
-		int& operator!=(Fixed const & src);
 		int& operator+(Fixed const & src);
 		int& operator-(Fixed const & src);
 		int& operator*(Fixed const & src);
 		int& operator/(Fixed const & src);
+		bool operator>(Fixed const & src) const;
+		bool operator<(Fixed const & src) const;
+		bool operator>=(Fixed const & src) const;
+		bool operator<=(Fixed const & src) const;
+		bool operator==(Fixed const & src) const;
+		bool operator!=(Fixed const & src) const;
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		float toFloat( void ) const;

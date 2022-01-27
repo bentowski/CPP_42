@@ -39,6 +39,66 @@ int& Fixed::operator=(Fixed const & src)
 	return (this->_n);
 }
 
+int& Fixed::operator+(Fixed const & src)
+{
+	return (this->_n + src.getRawBits());
+}
+
+int& Fixed::operator-(Fixed const & src)
+{
+	return (this->_n - src.getRawBits());
+}
+
+int& Fixed::operator*(Fixed const & src)
+{
+	return (this->_n * src.getRawBits());
+}
+
+int& Fixed::operator/(Fixed const & src)
+{
+	return (this->_n / src.getRawBits());
+}
+
+bool Fixed::operator>( Fixed const & src) const
+{
+	if (this->_n > src.getRawBits())
+		return (0);
+	else
+		return (1);
+}
+
+bool Fixed::operator<( Fixed const & src) const
+{
+	if (this->_n < src.getRawBits())
+		return (0);
+	else
+		return (1);
+}
+
+bool Fixed::operator>=( Fixed const & src) const
+{
+	if (this->_n >= src.getRawBits())
+		return (0);
+	else
+		return (1);
+}
+
+bool Fixed::operator<=( Fixed const & src) const
+{
+	if (this->_n <= src.getRawBits())
+		return (0);
+	else
+		return (1);
+}
+
+bool Fixed::operator==( Fixed const & src) const
+{
+	if (this->_n == src.getRawBits())
+		return (0);
+	else
+		return (1);
+}
+
 int Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
