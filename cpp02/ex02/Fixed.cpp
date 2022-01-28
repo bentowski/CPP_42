@@ -1,10 +1,11 @@
 #include "Fixed.hpp"
 #include <cmath>
 
+// =================== Constructor ==================
+
 Fixed::Fixed( void )
 {
 	this->_n = 0;
-	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
@@ -16,22 +17,24 @@ Fixed::Fixed( int const src)
 
 Fixed::Fixed( float const src)
 {
-	this->_n = (int)(src * pow(2, this->_b));
+	this->_n = (int)roundf(src * pow(2, this->_b));
 	return ;
 }
 
 Fixed::Fixed( Fixed const & src)
 {
 	this->_n = src.getRawBits();
-	std::cout << "Copy constructor called" << std::endl;
 	return ;
 }
 
+// =================== Destructor ==================
+
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called" << std::endl;
 	return ;
 }
+
+// =================== Operator overload ==================
 
 int& Fixed::operator=(Fixed const & src)
 {
@@ -39,25 +42,59 @@ int& Fixed::operator=(Fixed const & src)
 	return (this->_n);
 }
 
-int& Fixed::operator+(Fixed const & src)
+Fixed& Fixed::operator+(Fixed const & src)
 {
-	return (this->_n + src.getRawBits());
+	this->_n = (int)(roundf(this->toFloat() + src.toFloat() * pow(2, this->_b)));
+	return (*this);
 }
 
-int& Fixed::operator-(Fixed const & src)
+Fixed& Fixed::operator-(Fixed const & src)
 {
-	return (this->_n - src.getRawBits());
+	this->_n = (int)roundf(this->toFloat() - src.toFloat() * pow(2, this->_b));
+	return (*this);
 }
 
-int& Fixed::operator*(Fixed const & src)
+Fixed& Fixed::operator*(Fixed const & src)
 {
-	return (this->_n * src.getRawBits());
+	this->_n = (int)(roundf(this->toFloat() * src.toFloat() * pow(2, this->_b)));
+	return (*this);
 }
 
-int& Fixed::operator/(Fixed const & src)
+Fixed& Fixed::operator/(Fixed const & src)
 {
-	return (this->_n / src.getRawBits());
+	this->_n = this->_n / src.getRawBits();
+	return (*this);
 }
+
+// =================== Operation increment overload ===================
+
+Fixed& Fixed::operator++( void )
+{
+	_n++;
+	return *this;
+}
+
+Fixed Fixed::operator++( int )
+{
+	Fixed tmp = *this;
+	++*this;
+	return tmp;
+}
+
+Fixed& Fixed::operator--( void )
+{
+	_n--;
+	return *this;
+}
+
+Fixed Fixed::operator--( int )
+{
+	Fixed tmp = *this;
+	--*this;
+	return tmp;
+}
+
+// =================== Operator comparaison overload ==================
 
 bool Fixed::operator>( Fixed const & src) const
 {
@@ -99,15 +136,19 @@ bool Fixed::operator==( Fixed const & src) const
 		return (1);
 }
 
+// ================= Accessors ================
+
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_n;
 }
+
+// =============== Setters ================
 
 void Fixed::setRawBits( int const raw )
 {
 	this->_n = raw;
+	return ;
 }
 
 float Fixed::toFloat( void ) const
@@ -118,6 +159,24 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return (this->_n / pow(2, this->_b));
+}
+
+// ================ Other ==================
+
+Fixed const & Fixed::min(Fixed const & n1, Fixed const & n2)
+{
+	if (n1.getRawBits() < n2.getRawBits())
+		return (n1);
+	else
+		return (n2);
+}
+
+Fixed const & Fixed::max(Fixed const & n1, Fixed const & n2)
+{
+	if (n1.getRawBits() > n2.getRawBits())
+		return (n1);
+	else
+		return (n2);
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & rhs)
