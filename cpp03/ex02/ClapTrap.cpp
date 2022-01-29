@@ -2,13 +2,19 @@
 
 // ================ Constructors ===============
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _maxHitPoints(10), _attackDamage(10)
 {
 	std::cout << "Default constructor call" << std::endl;
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string newName ) : _name(newName)
+ClapTrap::ClapTrap( std::string newName ) : _name(newName), _maxHitPoints(10), _attackDamage(10)
+{
+	std::cout << "Only string constructor call" << std::endl;
+	return ;
+}
+
+ClapTrap::ClapTrap( std::string newName, int hitPoints, int  energyPoints, int attackDamage ) : _name(newName), _maxHitPoints(hitPoints), _hitPoints(hitPoints), _energyPoints(energyPoints), _attackDamage(attackDamage)
 {
 	std::cout << "Custom constructor call" << std::endl;
 	return ;
@@ -44,12 +50,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitPoints > amount)
 	{
-		std::cout << "ClapTrap" << this->_name << " has been attack and loose " << amount << "PV ...!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been attack and loose " << amount << "PV ...!" << std::endl;
 		this->_hitPoints -= amount;
 	}
 	else if (this->_hitPoints > 0)
 	{
-		std::cout << "ClapTrap" << this->_name << " has been attack and loose " << this->_hitPoints << "PV ...!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been attack and loose " << this->_hitPoints << "PV ...!" << std::endl;
 		this->_hitPoints = 0;
 	}
 	else
@@ -67,7 +73,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	if (this->_hitPoints > 0 && (this->_hitPoints + amount) <= this->_maxHitPoints && this->_energyPoints >= amount)
 	{
-		std::cout << "ClapTrap" << this->_name << " be repaired of " << amount << "PV but loose " << amount << " energy !" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << "PV but loose " << amount << " energy !" << std::endl;
 		this->_hitPoints += amount;
 		this->_energyPoints -= amount;
 	}

@@ -3,7 +3,7 @@
 NAME = uselessClapTrap
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
