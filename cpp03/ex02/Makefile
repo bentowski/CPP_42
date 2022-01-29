@@ -1,6 +1,6 @@
 # the compiler: gcc for C program, define as g++ for C++
 
-NAME = uselessClapTrap
+NAME = uselessFragTrap
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
 SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp

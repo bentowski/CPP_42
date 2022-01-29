@@ -1,9 +1,9 @@
 # the compiler: gcc for C program, define as g++ for C++
 
-NAME = uselessScavTrap
+NAME = uselessDiamondTrap
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
