@@ -44,12 +44,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitPoints > amount)
 	{
-		std::cout << "ClapTrap " << this->_name << " has been attack and loose " << amount << "PV ...!" << std::endl;
+		std::cout << "ClapTrap" << this->_name << " has been attack and loose " << amount << "PV ...!" << std::endl;
 		this->_hitPoints -= amount;
 	}
 	else if (this->_hitPoints > 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " has been attack and loose " << this->_hitPoints << "PV ...!" << std::endl;
+		std::cout << "ClapTrap" << this->_name << " has been attack and loose " << this->_hitPoints << "PV ...!" << std::endl;
 		this->_hitPoints = 0;
 	}
 	else
@@ -67,7 +67,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	if (this->_hitPoints > 0 && (this->_hitPoints + amount) <= this->_maxHitPoints && this->_energyPoints >= amount)
 	{
-		std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << "PV but loose " << amount << " energy !" << std::endl;
+		std::cout << "ClapTrap" << this->_name << " be repaired of " << amount << "PV but loose " << amount << " energy !" << std::endl;
 		this->_hitPoints += amount;
 		this->_energyPoints -= amount;
 	}

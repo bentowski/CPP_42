@@ -6,26 +6,10 @@ int main()
 	ClapTrap monk("Bob");
 	ScavTrap monkey("Donkey");
 
-	std::cout << std::endl;
-	std::cout << "Health : " << monkey.getHitPoints() << std::endl;
-	std::cout << "Energy : " << monkey.getEnergyPoints() << std::endl;
-	std::cout << std::endl;
-	std::cout << "attack :" << std::endl;
-	monkey.attack("Alpha");
-	std::cout << "takeDamage :" << std::endl;
-	monkey.takeDamage(10);
-	std::cout << "Repair :" << std::endl;
-	monkey.beRepaired(1);
-	std::cout << "Health : " << monkey.getHitPoints() << std::endl;
-	std::cout << "Energy : " << monkey.getEnergyPoints() << std::endl;
-	std::cout << std::endl;
-	monkey.guardGate();
 
 	std::cout << std::endl;
 	std::cout << "Health : " << monk.getHitPoints() << std::endl;
 	std::cout << "Energy : " << monk.getEnergyPoints() << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "attack :" << std::endl;
