@@ -1,4 +1,3 @@
-# the compiler: gcc for C program, define as g++ for C++
 
 NAME = uselessDiamondTrap
 CXX = clang++
