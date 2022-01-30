@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:56:30 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:56:31 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/30 16:07:16 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void Contact::addContact(int contact_number)
 	{
 		std::cout << msg[x] << " : ";
 		std::getline(std::cin, buf[x]);
-		x++;
+		if (buf[x] != "")
+			x++;
 	}
 	this->first_name = buf[0];
 	this->last_name = buf[1];
