@@ -10,8 +10,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap(std::string name);
 		~DiamondTrap();
 		void guardGate();
-    int getHitPoints();
-    int getEnergyPoints();
+    // int getHitPoints();
+    // int getEnergyPoints();
     int getAttackDamage();
     void attack(const std::string& target);
 	private:
