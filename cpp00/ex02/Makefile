@@ -1,9 +1,19 @@
-# the compiler: gcc for C program, define as g++ for C++
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/30 15:56:17 by bbaudry           #+#    #+#              #
+#    Updated: 2022/01/30 15:56:20 by bbaudry          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = xSmallPhoneBook
+NAME = repaired
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -I
-SRCS	=	test.cpp Account.cpp
+SRCS	=	tests.cpp Account.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
