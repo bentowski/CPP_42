@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:37 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:58:37 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/30 16:16:35 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ const std::string& Weapon::getType( void ) const
 void Weapon::setType( std::string newType )
 {
 	this->type = newType;
-	std::cout << "ok" << std::endl;
 }

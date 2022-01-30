@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:19 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:58:20 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/30 16:18:28 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ HumanA::~HumanA( void )
 
 void HumanA::attack( void )
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+		std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }
