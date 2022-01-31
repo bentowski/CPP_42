@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:35:00 by bbaudry          ###   ########.fr       */
+/*   Created: 2022/01/30 17:13:34 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/30 17:29:51 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 
-int main()
+Cat::Cat()
 {
-  const Animal* meta = new Animal();
-  const Animal* j = new Dog();
-  const Animal* i = new Cat();
+  std::cout << "Cat default constructor" << std::endl;
+  this->type = "Cat";
+  brain = new Brain();
+  return ;
+}
 
-  std::cout << j->getType() << " " << std::endl;
-  std::cout << i->getType() << " " << std::endl;
+Cat::~Cat()
+{
+  delete brain;
+  std::cout << "Cat default destructor" << std::endl;
+  return ;
+}
 
-  i->makeSound(); //will output the cat sound!
-  j->makeSound();
-
-  meta->makeSound();
-  delete i;
-  delete j;
-  delete meta;
-  return 0;
+void Cat::makeSound() const
+{
+  std::cout << "Miaouuuu" << std::endl;
+  return ;
 }

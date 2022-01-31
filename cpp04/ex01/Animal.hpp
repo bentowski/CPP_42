@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:34:09 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/30 18:03:28 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Animal
   protected:
     std::string type = "undefined";
   private:
-    Animal(Animal & src);
     int& operator=(Animal const & src);
+    Animal(Animal & src);
 };
 
 #endif

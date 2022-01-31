@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:34:09 by bbaudry          ###   ########.fr       */
+/*   Created: 2022/01/30 17:13:36 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/30 17:30:33 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
-# include <iostream>
+#ifndef CAT_H
+# define CAT_H
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Cat: public Animal
 {
   public:
-    Animal();
-    std::string getType() const;
-    virtual void makeSound() const;
-    virtual ~Animal();
-  protected:
-    std::string type = "undefined";
+    Cat();
+    ~Cat();
+    void makeSound() const;
   private:
-    Animal(Animal & src);
-    int& operator=(Animal const & src);
+    Cat(Cat & src);
+    int& operator=(Cat const & src);
+    Brain* brain = NULL;
 };
 
 #endif

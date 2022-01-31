@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:34:09 by bbaudry          ###   ########.fr       */
+/*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/30 17:30:39 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
-# include <iostream>
+#ifndef DOG_H
+# define DOG_H
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Dog: public Animal
 {
   public:
-    Animal();
-    std::string getType() const;
-    virtual void makeSound() const;
-    virtual ~Animal();
-  protected:
-    std::string type = "undefined";
+    Dog();
+    ~Dog();
+    void makeSound() const;
   private:
-    Animal(Animal & src);
-    int& operator=(Animal const & src);
+    Dog(Dog & src);
+    int& operator=(Dog const & src);
+    Brain* brain = NULL;
 };
 
 #endif
