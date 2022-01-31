@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/30 15:56:51 by bbaudry           #+#    #+#              #
-#    Updated: 2022/01/31 17:20:06 by bbaudry          ###   ########.fr        #
+#    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
+#    Updated: 2022/01/31 17:06:46 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = bureaucratie
 CXX = clang++
-CXXFLAGS  = -Wall -Wextra -Werror
-SRCS	=	Megaphone.cpp
+CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
+SRCS	=	main.cpp Bureaucrat.cpp Form.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)

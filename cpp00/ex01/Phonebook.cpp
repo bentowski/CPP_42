@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:56:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:56:44 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:45:16 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int Phonebook::listen()
       }
       std::cout << "wich contact want you to see ? Enter a number" << std::endl;
       std::getline(std::cin, buf);
-      while (buf[1] || (buf[0] < '0' || buf[0] > '9'))
+      while (buf[1] && (buf[0] < '0' || buf[0] > '9'))
       {
         std::cout << "the contact selected not exist, select an other contact please" << std::endl;
 		std::getline(std::cin, buf);

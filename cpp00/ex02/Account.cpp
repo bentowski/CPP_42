@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:56:07 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:56:08 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:47:35 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ bool Account::makeWithdrawal( int withdrawal )
 	{
 		std::cout << "index:" << this->_accountIndex << ";";
 		std::cout << "p_amount:" << checkAmount() << ";";
-		std::cout << "withdrawal:refused" << ";";
+		std::cout << "withdrawal:refused";
 		std::cout << std::endl;
 		return 0;
 	}
@@ -150,7 +150,7 @@ int Account::checkAmount( void ) const
 void	Account::displayAccountsInfos( void )
 {
 	Account::_displayTimestamp();
-	std::cout << "acounts:" << Account::getNbAccounts() << ";";
+	std::cout << "accounts:" << Account::getNbAccounts() << ";";
 	std::cout << "total:" << Account::getTotalAmount() << ";";
 	std::cout << "deposits:" << Account::getNbDeposits() << ";";
 	std::cout << "withdrawals:" << Account::getNbWithdrawals();
