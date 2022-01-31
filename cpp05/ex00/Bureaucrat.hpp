@@ -11,8 +11,8 @@ class Bureaucrat
 		int getGrade() const;
 		void gradeUp();
 		void gradeDown();
-		std::exception GradeTooLowException();
-		std::exception GradeTooHighException();
+		class GradeTooLowException : public std::exception {};
+		class GradeTooHighException : public std::exception {};
 	private:
 		Bureaucrat();
 		int& operator=(Bureaucrat const & src);
