@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:54:50 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/01/31 11:59:39 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,31 @@ int main()
 {
   int x = 4;
   int y = 0;
-  Animal* meta = new Animal[x];
+  Animal* meta[x];
   while (y < x / 2)
   {
     meta[y] = new Dog();
-    std::cout << meta[y].getType() << " " << std::endl;
-    meta[y].makeSound();
     y++;
   }
   while (y < x)
   {
-    const Cat meta[y] = new Cat();
-    std::cout << meta[y].getType() << " " << std::endl;
-    meta[y].makeSound(); //will output the cat sound!
+    meta[y] = new Cat();
     y++;
   }
 
-  delete [] meta;
+  y = 0;
+  while (y < x)
+  {
+	  std::cout << meta[y]->getType() << " " << std::endl;
+	  meta[y]->makeSound();
+	  y++;
+  }
+
+  y = 0;
+  while (y < x)
+  {
+	  delete meta[y];
+	  y++;
+  }
   return 0;
 }
