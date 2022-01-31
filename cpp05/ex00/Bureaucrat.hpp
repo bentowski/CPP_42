@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/31 15:59:31 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/31 15:59:31 by bbaudry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_H
 # define BUREAUCRAT_H
 # include <iostream>
@@ -20,5 +32,7 @@ class Bureaucrat
 		std::string const name;
 		int grade;
 };
+
+std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);
 
 #endif

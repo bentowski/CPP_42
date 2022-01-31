@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/31 15:59:29 by bbaudry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main()
@@ -5,11 +17,11 @@ int main()
 	try
 	{
 		Bureaucrat created("Mike", 148);
-		std::cout << created.getName() << " is grade " << created.getGrade() << std::endl;
+		std::cout << created << std::endl;
 		Bureaucrat error("Bob", 0);
-		std::cout << error.getName() << " is grade " << error.getGrade() << std::endl;
+		std::cout << error << std::endl;
 		Bureaucrat noCreated("Marcel", 12);
-		std::cout << noCreated.getName() << " is grade " << noCreated.getGrade() << std::endl;
+		std::cout << noCreated << std::endl;
 	}
 	catch (std::exception e)
 	{

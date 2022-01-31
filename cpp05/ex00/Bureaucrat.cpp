@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/31 15:59:34 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/01/31 15:59:34 by bbaudry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::~Bureaucrat()
@@ -50,4 +62,10 @@ void Bureaucrat::gradeDown()
 	{
 		this->grade--;
 	}
+}
+
+std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs)
+{
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	return o;
 }
