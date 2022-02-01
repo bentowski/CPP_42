@@ -6,14 +6,13 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 17:22:39 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/01 14:28:04 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_H
 # define BUREAUCRAT_H
 # include <iostream>
-# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -24,7 +23,7 @@ class Bureaucrat
 		int getGrade() const;
 		void gradeUp();
 		void gradeDown();
-		void signForm(Form const & src);
+		void signForm(std::string const formName, int const requiredGrade) const;
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:

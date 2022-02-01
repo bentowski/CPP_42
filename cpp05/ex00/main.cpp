@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 15:59:29 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/01 14:33:57 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 		Bureaucrat noCreated("Marcel", 12);
 		std::cout << noCreated << std::endl;
 	}
-	catch (std::exception e)
+	catch (std::exception & e)
 	{
 		std::cout << "The bureaucrat's grade must be beetween 1 and 150 only" << std::endl;
 	}
