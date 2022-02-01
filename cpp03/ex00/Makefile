@@ -2,7 +2,7 @@
 
 NAME = uselessClapTrap
 CXX = clang++
-CXXFLAGS  = -Wall -Wextra -Werror -I -std=c++98
+CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp ClapTrap.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
@@ -12,18 +12,18 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 $(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
 	@mkdir -p $(OBJS_DIR)
 	@echo "Compiling: $<"
-	@clang++ $(FLAGS) -c $< -o $@
+	clang++ $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@clang++ $(FLAGS) -o $(NAME) $(OBJS)
+	clang++ $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all: $(NAME)
 
 
 clean:
-	$(RM) $(NAME)
+	$(RM) -r $(OBJS_DIR)
 
 fclean: clean
-	$(RM) -r $(OBJS_DIR)
+	$(RM) $(NAME)
 
 re: fclean all

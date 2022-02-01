@@ -6,13 +6,14 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:57:59 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:57:59 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/02 00:00:35 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 Zombie::Zombie( void ){
+	std::cout << this->name <<" Zombie created" << std::endl;
 	return ;
 }
 

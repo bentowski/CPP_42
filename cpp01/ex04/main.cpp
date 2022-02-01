@@ -6,23 +6,23 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:43 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:58:44 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/02 00:34:27 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
-#include <cstring>
+#include <string>
 #include <iostream>
+#include <fstream>
 
-int main(int ac, char **av) {
+int main(int ac, char *av[]) {
 
 	if (ac == 4) {
 		std::ifstream ifs(av[1]);
 		if (ifs.good()) {
 			std::string line;
-			line = av[1];
-			line.append(".replace");
-			std::ofstream ofs(line);
+			char *test;
+			test = av[1] + ".replace";
+			std::ofstream ofs(av[1] + test);
 			int x = 0;
 			int y = 0;
 

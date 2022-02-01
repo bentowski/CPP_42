@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:56:07 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 17:47:35 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/01 23:51:45 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <ctime>
 
-Account::Account( int initial_deposit ): _amount(initial_deposit), _accountIndex(Account::_nbAccounts)
+Account::Account( int initial_deposit ): _accountIndex(Account::_nbAccounts),_amount(initial_deposit)
 {
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";

@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:56:36 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:56:37 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/01 23:51:14 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 int main()
 {
-	int		x;
-
 	Phonebook	phonebook;
 	std::cout << "Welcome !" << std::endl;
 	while (1)

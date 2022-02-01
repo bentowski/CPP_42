@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:21 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:58:22 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/02 00:02:13 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA {
 		~HumanA( void );
 		void attack( void );
 	private:
-		Weapon& weapon;
 		std::string name;
+		Weapon& weapon;
 };
 #endif
