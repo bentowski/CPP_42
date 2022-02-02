@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:43 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/02 11:45:52 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/02 12:10:27 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char *av[]) {
 			std::string line;
 			line = av[1];
 			line.append(".replace");
-			std::ofstream	ofs(line);
+			std::ofstream	ofs(line.c_str());
 			int x = 0;
 			int y = 0;
 

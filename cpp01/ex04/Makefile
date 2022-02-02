@@ -6,13 +6,13 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 15:58:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/02 11:45:37 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/02 11:51:46 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 CXX = clang++
-CXXFLAGS  = -Wall -Wextra -Werror
+CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
