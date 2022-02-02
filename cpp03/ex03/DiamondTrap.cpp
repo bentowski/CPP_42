@@ -3,7 +3,7 @@
 // ============= Constructor ===============
 
 DiamondTrap::DiamondTrap(std::string name):
-ClapTrap(name), FragTrap(name), ScavTrap(name)
+ClapTrap(name + "_clap_trap", 100, 50, 30), FragTrap(name), ScavTrap(name), _name(name)
 {
   std::cout << "DiamondTrap custom constructor called" << std::endl;
   return;
@@ -17,9 +17,9 @@ DiamondTrap::~DiamondTrap()
   return ;
 }
 
+// ========== Members functions ==========
+
 void DiamondTrap::attack( const std::string& target)
 {
-	ScavTrap::attack(target);
+  ScavTrap::attack(target);
 }
-
-// ========== Members functions ==========
