@@ -2,12 +2,6 @@
 
 // ============= Constructor ===============
 
-FragTrap::FragTrap(): ClapTrap()
-{
-  std::cout << "FragTrap default constructor called" << std::endl;
-  return;
-}
-
 FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 100, 30)
 {
   std::cout << "FragTrap custom constructor called" << std::endl;

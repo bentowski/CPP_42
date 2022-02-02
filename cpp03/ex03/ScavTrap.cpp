@@ -2,12 +2,6 @@
 
 // ============= Constructor ===============
 
-ScavTrap::ScavTrap(): ClapTrap()
-{
-  std::cout << "ScavTrap default constructor called" << std::endl;
-  return;
-}
-
 ScavTrap::ScavTrap(std::string name): ClapTrap(name, 100, 50, 20)
 {
   std::cout << "ScavTrap custom constructor called" << std::endl;

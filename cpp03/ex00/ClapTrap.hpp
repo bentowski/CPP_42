@@ -4,7 +4,6 @@
 
 class ClapTrap{
 	public:
-		ClapTrap();
 		ClapTrap(std::string name);
 		~ClapTrap();
 		void attack( const std::string& target);
@@ -14,13 +13,14 @@ class ClapTrap{
 		int getEnergyPoints();
 	protected:
 	private:
+		ClapTrap();
 		int& operator=(ClapTrap const & src);
 		ClapTrap(ClapTrap & src);
 		std::string _name;
-		const int _maxHitPoints = 10;
-		int _hitPoints = 10;
-		int _energyPoints = 10;
-		const int _attackDamage = 0;
+		const unsigned int _maxHitPoints;
+		unsigned int _hitPoints;
+		unsigned int _energyPoints;
+		const unsigned int _attackDamage;
 };
 
 #endif

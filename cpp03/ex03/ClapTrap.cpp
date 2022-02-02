@@ -2,13 +2,7 @@
 
 // ================ Constructors ===============
 
-ClapTrap::ClapTrap() : _maxHitPoints(10), _attackDamage(10)
-{
-	std::cout << "Default constructor call" << std::endl;
-	return ;
-}
-
-ClapTrap::ClapTrap( std::string newName ) : _name(newName), _maxHitPoints(10), _attackDamage(10)
+ClapTrap::ClapTrap( std::string newName ) : _name(newName+"_clap_name"), _maxHitPoints(10), _attackDamage(10)
 {
 	std::cout << "Only string constructor call" << std::endl;
 	return ;

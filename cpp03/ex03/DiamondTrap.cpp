@@ -2,13 +2,6 @@
 
 // ============= Constructor ===============
 
-DiamondTrap::DiamondTrap():
-ScavTrap(), FragTrap()
-{
-  std::cout << "DiamondTrap default constructor called" << std::endl;
-  return;
-}
-
 DiamondTrap::DiamondTrap(std::string name):
 FragTrap(name), ScavTrap(name)
 {
