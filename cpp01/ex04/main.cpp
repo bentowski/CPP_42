@@ -6,11 +6,11 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:43 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/02 00:34:27 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/02 11:45:52 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include <cstring>
 #include <iostream>
 #include <fstream>
 
@@ -20,9 +20,9 @@ int main(int ac, char *av[]) {
 		std::ifstream ifs(av[1]);
 		if (ifs.good()) {
 			std::string line;
-			char *test;
-			test = av[1] + ".replace";
-			std::ofstream ofs(av[1] + test);
+			line = av[1];
+			line.append(".replace");
+			std::ofstream	ofs(line);
 			int x = 0;
 			int y = 0;
 
