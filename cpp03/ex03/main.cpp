@@ -15,7 +15,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Health : " << finalKey.getHitPoints() << std::endl;
 	std::cout << "Energy : " << finalKey.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage : " << finalKey.getAttackDamage() << std::endl;
+	// std::cout << "Attack Damage : " << finalKey.getAttackDamage() << std::endl;
 	finalKey.attack("Lucy");
 
 	std::cout << std::endl;

@@ -35,7 +35,7 @@ void ScavTrap::attack(const std::string& target)
 	}
 	else
 	{
-		std::cout << "Hmmm he doesn't move at all... i think he is too tired ! Or maybe dead..." << std::endl;
+		std::cout << "ScavTrap Hmmm he doesn't move at all... i think he is too tired ! Or maybe dead..." << std::endl;
 	}
 	return ;
 }
