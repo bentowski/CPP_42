@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:59:54 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 15:59:55 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/03 12:42:58 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Fixed::Fixed( void )
 
 Fixed::Fixed( Fixed const & src)
 {
-	this->_n = src.getRawBits();
 	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 	return ;
 }
 
@@ -34,6 +34,7 @@ Fixed::~Fixed( void )
 
 int& Fixed::operator=(Fixed const & src)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_n = src.getRawBits();
 	return (this->_n);
 }
