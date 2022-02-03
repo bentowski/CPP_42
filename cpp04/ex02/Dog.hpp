@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:30:39 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/03 16:44:12 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog: public Animal
   private:
     Dog(Dog & src);
     int& operator=(Dog const & src);
-    Brain* brain = NULL;
+    Brain* brain;
 };
 
 #endif

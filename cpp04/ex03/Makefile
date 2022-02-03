@@ -1,0 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
+#    Updated: 2022/02/03 16:40:28 by bbaudry          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = realAnimal
+CXX = clang++
+CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
+SRCS	=	main.cpp Character.cpp Ice.cpp Cure.cpp Materia.cpp
+SRCS_DIR = ./
+OBJS_DIR 	= 	objects/
+OBJ 		= 	$(SRCS:.cpp=.o)
+OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
+
+$(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
+	@mkdir -p $(OBJS_DIR)
+	@echo "Compiling: $<"
+	clang++ $(CXXFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	clang++ $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+all: $(NAME)
+
+
+clean:
+	$(RM) -r $(OBJS_DIR)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all

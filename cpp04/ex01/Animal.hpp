@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 18:03:28 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/03 16:43:06 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal
     virtual void makeSound() const;
     virtual ~Animal();
   protected:
-    std::string type = "undefined";
+    std::string type;
   private:
     int& operator=(Animal const & src);
     Animal(Animal & src);
