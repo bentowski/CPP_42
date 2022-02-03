@@ -5,7 +5,14 @@
 class Cure
 {
 	public:
+		Cure();
+		~Cure();
+		AMateria* clone() const;
+		void use(ICharacter& target);
 	private:
+		Cure(Cure & src);
+	    int& operator=(Cure const & src);
+		std::string const type = "cure";
 }
 
 #endif

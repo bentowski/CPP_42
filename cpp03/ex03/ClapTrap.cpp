@@ -1,14 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/03 14:33:04 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/02/03 16:05:53 by bbaudry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 // ================ Constructors ===============
 
-ClapTrap::ClapTrap( std::string newName ) : _name(newName+"_clap_name"), _maxHitPoints(10), _attackDamage(10)
+ClapTrap::ClapTrap( std::string newName ):
+_name(newName+"_clap_name"), _maxHitPoints(10), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "Only string constructor call" << std::endl;
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string newName, int hitPoints, int  energyPoints, int attackDamage ) : _name(newName), _maxHitPoints(hitPoints), _hitPoints(hitPoints), _energyPoints(energyPoints), _attackDamage(attackDamage)
+ClapTrap::ClapTrap( std::string newName, int hitPoints, int  energyPoints, int attackDamage ):
+_name(newName), _maxHitPoints(hitPoints), _hitPoints(hitPoints), _energyPoints(energyPoints), _attackDamage(attackDamage)
 {
 	std::cout << "Custom constructor call" << std::endl;
 	return ;

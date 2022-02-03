@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/03 14:33:07 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/02/03 14:34:29 by bbaudry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
@@ -14,10 +26,10 @@ class ClapTrap{
 		int getEnergyPoints();
 	protected:
 		std::string _name;
-		const unsigned int _maxHitPoints;
+		unsigned int _maxHitPoints;
 		unsigned int _hitPoints;
 		unsigned int _energyPoints;
-		const unsigned int _attackDamage;
+		unsigned int _attackDamage;
 	private:
 		ClapTrap();
 		int& operator=(ClapTrap const & src);
