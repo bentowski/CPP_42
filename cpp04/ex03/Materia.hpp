@@ -1,6 +1,6 @@
 #ifndef MATERIA_H
 # define MATERIA_H
-# include <iostream>
+# include "ICharacter.hpp"
 
 class AMateria
 {

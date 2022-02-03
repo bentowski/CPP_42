@@ -12,6 +12,6 @@ class Ice
 	private:
 		Ice(Ice & src);
 	    int& operator=(Ice const & src);
-		std::string const type = "ice";
-}
+		std::string const _type;
+};
 #endif
