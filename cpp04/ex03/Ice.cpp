@@ -1,6 +1,6 @@
 #include "Ice.hpp"
 
-Ice::Ice(): AMateria(), _type("ice")
+Ice::Ice(): AMateria("ice")
 {
 	std::cout << "Default Ice constructor called" << std::endl;
 	return;

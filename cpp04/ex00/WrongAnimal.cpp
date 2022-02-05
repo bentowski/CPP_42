@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:40:00 by bbaudry          ###   ########.fr       */
+/*   Created: 2022/01/30 17:13:29 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/02/05 15:27:36 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
-# include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog: public Animal
+WrongAnimal::WrongAnimal()
 {
-  public:
-    Dog();
-    ~Dog();
-    // void makeSound() const;
-  private:
-    Dog(Dog & src);
-	std::string _sound;
-    int& operator=(Dog const & src);
-};
+  std::cout << "WrongAnimal default constructor" << std::endl;
+  return ;
+}
 
-#endif
+WrongAnimal::~WrongAnimal()
+{
+  std::cout << "WrongAnimal default destructor" << std::endl;
+  return ;
+}
+
+void WrongAnimal::makeSound() const
+{
+  std::cout << "..." << std::endl;
+  return ;
+}
+
+std::string WrongAnimal::getType() const
+{
+  return (this->type);
+}

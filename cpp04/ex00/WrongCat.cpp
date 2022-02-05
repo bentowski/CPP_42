@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:40:00 by bbaudry          ###   ########.fr       */
+/*   Created: 2022/01/30 17:13:34 by bbaudry           #+#    #+#             */
+/*   Updated: 2022/02/05 15:29:19 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
-# include "Animal.hpp"
+#include "WrongCat.hpp"
 
-class Dog: public Animal
+WrongCat::WrongCat()
 {
-  public:
-    Dog();
-    ~Dog();
-    // void makeSound() const;
-  private:
-    Dog(Dog & src);
-	std::string _sound;
-    int& operator=(Dog const & src);
-};
+  std::cout << "WrongCat default constructor" << std::endl;
+  this->type = "WrongCat";
+  return ;
+}
 
-#endif
+WrongCat::~WrongCat()
+{
+  std::cout << "WrongCat default destructor" << std::endl;
+  return ;
+}
+
+void WrongCat::makeSound() const
+{
+  std::cout << "Miaouuuu" << std::endl;
+  return ;
+}

@@ -12,7 +12,6 @@ class Cure
 	private:
 		Cure(Cure & src);
 	    int& operator=(Cure const & src);
-		std::string const type;
 };
 
 #endif

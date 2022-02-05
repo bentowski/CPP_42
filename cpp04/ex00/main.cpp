@@ -6,13 +6,15 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:35:00 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 15:31:52 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -30,5 +32,11 @@ int main()
   delete i;
   delete j;
   delete meta;
+
+  const WrongAnimal* wrong = new WrongAnimal();
+  const WrongCat* wrongCat = new WrongCat();
+
+  wrong->makeSound();
+  wrongCat->makeSound();
   return 0;
 }

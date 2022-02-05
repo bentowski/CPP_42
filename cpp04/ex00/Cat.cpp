@@ -6,13 +6,13 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:13:35 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 15:40:23 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat(): _sound("Miaouuu")
 {
   std::cout << "Cat default constructor" << std::endl;
   this->type = "Cat";
