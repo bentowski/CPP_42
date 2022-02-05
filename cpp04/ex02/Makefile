@@ -6,14 +6,14 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/01 23:57:25 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/05 19:04:24 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = realAnimal
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS	=	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongCat.cpp WrongAnimal.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)

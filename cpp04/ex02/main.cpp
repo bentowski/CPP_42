@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 12:10:39 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 19:15:10 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int main()
   while (y < x / 2)
   {
     meta[y] = new Dog();
+    std::cout << std::endl;
     y++;
   }
   while (y < x)
   {
     meta[y] = new Cat();
+    std::cout << std::endl;
     y++;
   }
 
@@ -36,6 +38,7 @@ int main()
   {
 	  std::cout << meta[y]->getType() << " " << std::endl;
 	  meta[y]->makeSound();
+    std::cout << std::endl;
 	  y++;
   }
 
@@ -43,6 +46,7 @@ int main()
   while (y < x)
   {
 	  delete meta[y];
+    std::cout << std::endl;
 	  y++;
   }
   return 0;

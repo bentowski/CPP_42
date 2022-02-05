@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:39:11 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 19:02:01 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Animal
   public:
     Animal();
     std::string getType() const;
-    void makeSound() const;
+    virtual void makeSound() const;
     virtual ~Animal();
   protected:
     std::string type;
