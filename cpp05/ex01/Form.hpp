@@ -16,7 +16,7 @@ class Form
 		class GradeTooHighException : public std::exception {};
 	private:
 		std::string const _name;
-		bool _signed = 0;
+		bool _signed;
 		int const _signGrade;
 		int const _execGrade;
 		Form();

@@ -6,62 +6,276 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/01 14:44:41 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 23:35:58 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-
 	try
 	{
-		Bureaucrat created("Mike", 148);
-		std::cout << created << std::endl;
-		std::cout << std::endl;
+			Bureaucrat bob("Bob", 148);
+			Bureaucrat antonio("Antonio", 146);
+			Bureaucrat mike("Mike", 71);
+			Bureaucrat denis("Denis", 25);
+			Bureaucrat sully("Sully", 1);
 
-		try
-		{
-			Form cantBeSigned("rb12", 20, 35);
-			std::cout << cantBeSigned << std::endl;
+			// =============== Shrubbery Form =============
+			try
+			{
+				std::cout << std::endl;
+				std::cout << "===== Shrubbery Form =======" << std::endl;
+				std::cout << std::endl;
+				ShrubberyCreationForm FirstForm("garden");
+				std::cout << std::endl;
+				// ============= Can't be signed ===============
+				std::cout << bob << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					FirstForm.beSigned(bob);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					FirstForm.execute(bob);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				std::cout << std::endl;
+
+				// ============= Can't be executed but can be signed ============
+				std::cout << antonio << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					FirstForm.beSigned(antonio);
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				antonio.gradeUp();
+				std::cout << antonio << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					FirstForm.beSigned(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					FirstForm.execute(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				std::cout << std::endl;
+
+				// =============== Can be executed ===============
+				std::cout << mike << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					FirstForm.execute(mike);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+
+
+				// =========================== End of Shrubbery ========================
+
+
+			}
+			catch (std::exception & e)
+			{
+				std::cout << "The Form's grade must be beetween 1 and 150 only" << std::endl;
+			}
+			try
+			{
+				std::cout << std::endl;
+				std::cout << "===== Robotomy Form =======" << std::endl;
+				std::cout << std::endl;
+				// =========================== Robotomy Form ===========================
+				RobotomyRequestForm SecondForm("Lucas");
+				std::cout << std::endl;
+
+				// ============= Can't be signed ===============
+				std::cout << antonio << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.beSigned(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					SecondForm.execute(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+
+				// ============= Can't be executed but can be signed ============
+				std::cout << mike << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.beSigned(mike);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					SecondForm.execute(mike);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+
+				// =============== Can be executed ===============
+				std::cout << denis << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.execute(denis);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+			}
+			catch (std::exception & e)
+			{
+				std::cout << "The Form's grade must be beetween 1 and 150 only" << std::endl;
+			}
 			std::cout << std::endl;
+			try
+			{
+				std::cout << std::endl;
+				std::cout << "===== President Pardon Form =======" << std::endl;
+				std::cout << std::endl;
+				// =========================== Robotomy Form ===========================
+				PresidentPardonForm SecondForm("Lucia");
+				std::cout << std::endl;
 
-			Form canBeSigned("rb13", 149, 148);
-			std::cout << canBeSigned << std::endl;
+				// ============= Can't be signed ===============
+				std::cout << antonio << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.beSigned(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					SecondForm.execute(antonio);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+
+				// ============= Can't be executed but can be signed ============
+				std::cout << denis << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.beSigned(denis);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be signed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+				try
+				{
+					SecondForm.execute(denis);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+
+				// =============== Can be executed ===============
+				std::cout << sully << std::endl;
+				std::cout << std::endl;
+				try
+				{
+					SecondForm.execute(sully);
+					std::cout << std::endl;
+				}
+				catch (std::exception & e)
+				{
+					std::cout << "The Form can't be executed by a low graded bureaucrat" << std::endl;
+					std::cout << std::endl;
+				}
+			}
+			catch (std::exception & e)
+			{
+				std::cout << "The Form's grade must be beetween 1 and 150 only" << std::endl;
+			}
 			std::cout << std::endl;
-
-			canBeSigned.beSigned(created);
-			std::cout << canBeSigned << std::endl;
-			std::cout << std::endl;
-
-			cantBeSigned.beSigned(created);
-			std::cout << cantBeSigned << std::endl;
-			std::cout << std::endl;
-
-			Form cantBeCreate("rb14", 0, 151);
-			std::cout << cantBeCreate << std::endl;
-			std::cout << std::endl;
-		}
-		catch (std::exception & e)
-		{
-			std::cout << "The Form's grade must be beetween 1 and 150 only" << std::endl;
-			std::cout << std::endl;
-		}
-
-		Bureaucrat error("Bob", 0);
-		std::cout << error << std::endl;
-		std::cout << std::endl;
-
-		Bureaucrat noCreated("Marcel", 12);
-		std::cout << noCreated << std::endl;
-		std::cout << std::endl;
 	}
+
 	catch (std::exception & e)
 	{
 		std::cout << "The bureaucrat's grade must be beetween 1 and 150 only" << std::endl;
-		std::cout << std::endl;
 	}
 
 }

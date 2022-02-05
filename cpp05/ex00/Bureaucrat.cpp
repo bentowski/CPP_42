@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 15:59:34 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/05 23:36:59 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ void Bureaucrat::gradeUp()
 {
 	if (this->grade == 1)
 	{
-		std::cout << "Bureaucrat" << this->getName() << "can't grade up more" << std::endl;
+		std::cout << "Bureaucrat " << this->getName() << " can't grade up more" << std::endl;
 	}
 	else
 	{
+		std::cout << "Bureaucrat " << this->getName() << " has been grade up" << std::endl;
 		this->grade--;
 	}
 }
@@ -56,11 +57,12 @@ void Bureaucrat::gradeDown()
 {
 	if (this->grade == 150)
 	{
-		std::cout << "Bureaucrat" << this->getName() << "can't grade down more" << std::endl;
+		std::cout << "Bureaucrat " << this->getName() << " can't grade down more" << std::endl;
 	}
 	else
 	{
-		this->grade--;
+		std::cout << "Bureaucrat " << this->getName() << " has been grade down" << std::endl;
+		this->grade++;
 	}
 }
 

@@ -1,31 +1,31 @@
-#ifndef FORM_H
-# define FORM_H
+#ifndef AFORM_H
+# define AFORM_H
 # include "Bureaucrat.hpp"
 
 class AForm
 {
 	public:
-		Form(std::string name, int signGrade, int execGrade);
-		~Form();
+		AForm(std::string name, int signGrade, int execGrade);
+		~AForm();
 		std::string getName() const;
 		int getSignGrade() const;
 		int getExecGrade() const;
 		std::string isSigned() const;
 		void beSigned(Bureaucrat const & src);
-		virtual void execute(Bureaucrat const & executor);
+		virtual void execute(Bureaucrat const & executor) = 0;
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:
 		std::string const _name;
-		bool _signed = 0;
+		bool _signed;
 		int const _signGrade;
 		int const _execGrade;
-		Form();
-		int& operator=(Form const & src);
-		Form(Form & src);
+		AForm();
+		int& operator=(AForm const & src);
+		AForm(AForm & src);
 };
 
-std::ostream & operator<<(std::ostream & o, Form const & rhs);
+std::ostream & operator<<(std::ostream & o, AForm const & rhs);
 
 
 #endif

@@ -1,16 +1,38 @@
 #ifndef SHRUBBERYCREATIONFORM_H
 # define SHRUBBERYCREATIONFORM_H
-#include "Form.hpp"
+# include "AForm.hpp"
+
+# define TREES "\n\
+								# #### ####\n\
+						 ### \\/#|### |/####\n\
+					 ##\\/#/ \\||/##/_/##/_#\n\
+			    ###  \\/###|/ \\/ # ###\n\
+				  ##_\\_#\\_\\## | #/###_/_####\n\
+				 	## #### # \\ #| /  #### ##/##\n\
+					  __#_--###`  |{,###---###-~\n\
+				 	  && &\\/&\\|& ()|/ @, &&\n\
+					  &\\/(/&/&||/& /_/)_&/_&\n\
+				   &() &\\/&|()|/&\\/ '%\" & ()\n\
+				  &_\\_&&_\\ |& |&&/&__%_/_& &&\n\
+				&&   && & &| &| /& & % ()& /&&\n\
+				 ()&_---()&\\&\\|&&-&&--%---()~\n\
+					  &&    \\|||\n\
+										 |||\n\
+										 |||\n\
+										 |||\n\
+								  , -=-~  .-^- _\n"
 
 class ShrubberyCreationForm : public AForm
 {
 	public:
-		ShrubberyCreationForm(std::string name);
+		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
+		void execute(Bureaucrat const & executor);
 	private:
 		ShrubberyCreationForm();
 		int& operator=(ShrubberyCreationForm const & src);
 		ShrubberyCreationForm(ShrubberyCreationForm & src);
+		std::string _target;
 };
 
 #endif
