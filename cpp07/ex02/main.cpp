@@ -1,11 +1,24 @@
+#include <iostream>
 #include "Array.hpp"
 #include "Array.tpp"
 #include <cstdlib>
 
-using std::string;
-using std::cout;
-using std::endl;
+class Human {
 
+public:
+
+	Human( void ) : _name("bob") {};
+	Human( std::string name ) : _name(name) {};
+	~Human( void ) {};
+
+	std::string	getName( void ) const { return this->_name; };
+	void		setName( std::string name ) { this->_name = name; };
+
+private:
+
+	std::string	_name;
+
+};
 
 int testIntegersArray( void ) {
 
@@ -16,17 +29,48 @@ int testIntegersArray( void ) {
 	for (unsigned int i = 0; i < intnArr.size(); i++)
 		intnArr.setArray(i, i);
 	intnArr2 = intnArr;
-	intnArr.setArray(0, -1);
+  intnArr.setArray(0, -1);
+	intnArr.setArray(4, 5);
 
-	cout << intArr << endl;
-	cout << intnArr << endl;
-	cout << intnArr2 << endl;
+	std::cout << intArr << std::endl;
+	std::cout << intnArr << std::endl;
+	std::cout << intnArr2 << std::endl;
 
 	try {
-		cout << intnArr2[12] << endl;
+		std::cout << intnArr2[12] << std::endl;
 	}
 	catch (Array<int>::Out &e) {
-		cout << "Error: index out of array limit" << endl;
+		std::cout << "Error: index out of array limit" << std::endl;
+	}
+
+	return 0;
+}
+
+int testHumansArray( void ) {
+
+	Array<Human>	Band;
+	Array<Human>	Beatles(4);
+
+	Beatles.setArray(0, Human("stuart"));
+	Beatles.setArray(1, Human("john"));
+	Beatles.setArray(2, Human("ringo"));
+	Beatles.setArray(3, Human("george"));
+	Band = Beatles;
+	Beatles.setArray(0, Human("paul"));
+
+	for (unsigned int i = 0; i < Band.size(); i++)
+		std::cout << Band[i].getName() << std::endl;
+	std::cout << std::endl;
+
+	for (unsigned int i = 0; i < Band.size(); i++)
+		std::cout << Beatles[i].getName() << std::endl;
+	std::cout << std::endl;
+
+	try {
+		std::cout << Beatles[5].getName() << std::endl;
+	}
+	catch (Array<Human>::Out &e) {
+		std::cout << "Error: index out of array limit" << std::endl;
 	}
 
 	return 0;
@@ -35,7 +79,7 @@ int testIntegersArray( void ) {
 #define MAX_VAL 750
 int main( int, char** )
 {
-	cout << "------ Test 0: Subject ------" << endl;
+	std::cout << "------ Test 0: Subject ------" << std::endl;
 
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
@@ -83,11 +127,15 @@ int main( int, char** )
     }
     delete [] mirror;//
 
-	cout << endl;
+	std::cout << std::endl;
 
-	cout << "------ Test 1: Integers ------" << endl;
+	std::cout << "------ Test 1: Integers ------" << std::endl;
 	testIntegersArray();
-	cout << endl;
+	std::cout << std::endl;
+
+	std::cout << "------ Test 2: Humans ------" << std::endl;
+	testHumansArray();
+	std::cout << std::endl;
 
     return 0;
 }
