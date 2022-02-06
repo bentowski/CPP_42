@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:36:26 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:34:48 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
     std::string type;
   private:
     WrongAnimal(WrongAnimal & src);
-    int& operator=(WrongAnimal const & src);
+    WrongAnimal& operator=(WrongAnimal const & src);
 };
 
 #endif

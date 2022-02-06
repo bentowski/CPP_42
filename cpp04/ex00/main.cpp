@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:31:52 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:29:19 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ int main()
 
   wrong->makeSound();
   wrongCat->makeSound();
+
+  delete wrong;
+  delete wrongCat;
   return 0;
 }

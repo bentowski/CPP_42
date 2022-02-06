@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 19:02:13 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:34:37 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Dog: public Animal
     void makeSound() const;
   private:
     Dog(Dog & src);
-	std::string _sound;
-    int& operator=(Dog const & src);
+	  std::string _sound;
+    Dog& operator=(Dog const & src);
 };
 
 #endif

@@ -8,7 +8,7 @@ Cure::Cure(): AMateria("cure")
 
 Cure::~Cure()
 {
-	std::cout << Default Cure destructeur called" << std::endl;
+	std::cout << "Default Cure destructeur called" << std::endl;
 	return;
 }
 

@@ -6,14 +6,14 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/03 16:40:28 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/06 18:50:00 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = realAnimal
-CXX = clang++
+CXX = c++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp Character.cpp Ice.cpp Cure.cpp Materia.cpp
+SRCS	=	main.cpp Character.cpp Ice.cpp Cure.cpp AMateria.cpp MateriaSource.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
@@ -22,10 +22,10 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 $(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp
 	@mkdir -p $(OBJS_DIR)
 	@echo "Compiling: $<"
-	clang++ $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	clang++ $(CXXFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all: $(NAME)
 

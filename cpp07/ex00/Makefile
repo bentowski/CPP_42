@@ -6,14 +6,14 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/06 18:24:29 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/06 18:16:43 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucratie
+NAME = firstsTemplates
 CXX = c++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS	=	main.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)

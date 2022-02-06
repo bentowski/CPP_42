@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/03 16:43:32 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:33:47 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog: public Animal
     void makeSound() const;
   private:
     Dog(Dog & src);
-    int& operator=(Dog const & src);
+    Dog& operator=(Dog const & src);
     Brain* brain;
 };
 

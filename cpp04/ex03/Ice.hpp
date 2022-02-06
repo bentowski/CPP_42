@@ -1,8 +1,8 @@
 #ifndef ICE_H
 # define ICE_H
-# include "Materia.hpp"
+# include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		Ice();
@@ -11,6 +11,6 @@ class Ice
 		void use(ICharacter& target);
 	private:
 		Ice(Ice & src);
-	    int& operator=(Ice const & src);
+    Ice& operator=(Ice const & src);
 };
 #endif

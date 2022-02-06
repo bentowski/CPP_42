@@ -1,6 +1,6 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "Materia.hpp"
+#include "AMateria.hpp"
 #include "MateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"

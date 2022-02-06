@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:36 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 15:36:44 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:33:58 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongCat: public WrongAnimal
     void makeSound() const;
   private:
     WrongCat(WrongCat & src);
-    int& operator=(WrongCat const & src);
+    WrongCat& operator=(WrongCat const & src);
 };
 
 #endif

@@ -1,8 +1,8 @@
 #ifndef CURE_H
 # define CURE_H
-# include "Materia.hpp"
+# include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
 	public:
 		Cure();
@@ -11,7 +11,7 @@ class Cure
 		void use(ICharacter& target);
 	private:
 		Cure(Cure & src);
-	    int& operator=(Cure const & src);
+   	Cure& operator=(Cure const & src);
 };
 
 #endif

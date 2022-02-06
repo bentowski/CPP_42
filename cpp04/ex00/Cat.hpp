@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:36 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 19:01:54 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 18:34:41 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Cat: public Animal
     void makeSound() const;
   private:
     Cat(Cat & src);
-	std::string _sound;
-    int& operator=(Cat const & src);
+	  std::string _sound;
+    Cat& operator=(Cat const & src);
 };
 
 #endif
