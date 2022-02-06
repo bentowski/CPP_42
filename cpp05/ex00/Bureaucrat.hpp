@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/31 15:59:31 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 04:08:15 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Bureaucrat
 		Bureaucrat();
 		int& operator=(Bureaucrat const & src);
 		Bureaucrat(Bureaucrat & src);
-		std::string const name;
-		int grade;
+		std::string const _name;
+		int _grade;
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);

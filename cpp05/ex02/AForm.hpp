@@ -2,6 +2,8 @@
 # define AFORM_H
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class AForm
 {
 	public:
@@ -12,7 +14,8 @@ class AForm
 		int getExecGrade() const;
 		std::string isSigned() const;
 		void beSigned(Bureaucrat const & src);
-		virtual void execute(Bureaucrat const & executor) = 0;
+		void execute(Bureaucrat const & executor);
+		virtual void action() = 0;
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:

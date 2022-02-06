@@ -14,35 +14,21 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	return ;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+void ShrubberyCreationForm::action()
 {
 	std::ofstream file_out;
 	std::string filename = this->_target;
 	filename.append("_shrubberry");
-	if (this->isSigned() == "yes")
+	file_out.open(filename.c_str(), std::ofstream::app);
+	if (file_out.is_open())
 	{
-		if (executor.getGrade() <= this->getExecGrade())
-		{
-			file_out.open(filename.c_str());
-			if (file_out.is_open())
-			{
-				file_out << TREES << std::endl;
-				file_out.close();
-			}
-			else
-			{
-				std::cout << "File " << filename << " creation failed" << std::endl;
-				return ;
-			}
-		}
-		else
-		{
-			throw AForm::GradeTooLowException();
-		}
+		file_out << TREES << std::endl;
+		file_out.close();
 	}
 	else
 	{
-		std::cout << "Can't be executed because " << this->getName() << " is not signed" << std::endl;
+		std::cout << "File " << filename << " creation failed" << std::endl;
+		return ;
 	}
 	return ;
 }

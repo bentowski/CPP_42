@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/01 14:28:04 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 04:07:04 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Bureaucrat
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:
-		std::string const name;
-		int grade;
+		std::string const _name;
+		int _grade;
 		Bureaucrat();
 		int& operator=(Bureaucrat const & src);
 		Bureaucrat(Bureaucrat & src);

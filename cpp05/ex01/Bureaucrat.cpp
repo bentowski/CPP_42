@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 23:36:55 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 04:07:26 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,51 +18,51 @@ Bureaucrat::~Bureaucrat()
 	return ;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int initialGrade) : name(name)
+Bureaucrat::Bureaucrat(std::string name, int initialGrade) : _name(name)
 {
 	if (initialGrade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else if (initialGrade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else
-		this->grade = initialGrade;
+		this->_grade = initialGrade;
 	std::cout << "Bureaucrat custom constructor" << std::endl;
 	return ;
 }
 
 std::string Bureaucrat::getName() const
 {
-	return (this->name);
+	return (this->_name);
 }
 
 int Bureaucrat::getGrade() const
 {
-	return (this->grade);
+	return (this->_grade);
 }
 
 void Bureaucrat::gradeUp()
 {
-	if (this->grade == 1)
+	if (this->_grade == 1)
 	{
 		std::cout << "Bureaucrat " << this->getName() << " can't grade up more" << std::endl;
 	}
 	else
 	{
 		std::cout << "Bureaucrat " << this->getName() << " has been grade up" << std::endl;
-		this->grade--;
+		this->_grade--;
 	}
 }
 
 void Bureaucrat::gradeDown()
 {
-	if (this->grade == 150)
+	if (this->_grade == 150)
 	{
 		std::cout << "Bureaucrat " << this->getName() << " can't grade down more" << std::endl;
 	}
 	else
 	{
 		std::cout << "Bureaucrat " << this->getName() << " has been grade down" << std::endl;
-		this->grade++;
+		this->_grade++;
 	}
 }
 

@@ -51,6 +51,27 @@ void AForm::beSigned(Bureaucrat const & src)
 	return;
 }
 
+void AForm::execute(Bureaucrat const & executor)
+{
+	executor.executeForm(*this);
+	if (this->isSigned() == "yes")
+	{
+		if (executor.getGrade() <= this->getExecGrade())
+		{
+			this->action();
+		}
+		else
+		{
+			throw AForm::GradeTooLowException();
+		}
+	}
+	else
+	{
+		std::cout << "Can't be executed because " << this->getName() << " is not signed" << std::endl;
+	}
+	return ;
+}
+
 std::ostream & operator<<( std::ostream & o, AForm const & rhs)
 {
 	o << "AForm " << rhs.getName() << "; Grade required for signature : " << rhs.getSignGrade() << "; Grade required for execution : " << rhs.getExecGrade() << "; Signed : " << rhs.isSigned();

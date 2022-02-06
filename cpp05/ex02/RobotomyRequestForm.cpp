@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
 AForm("Robotomy Request Form", 72, 45), _target(target)
@@ -13,30 +14,18 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	return ;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor)
+void RobotomyRequestForm::action()
 {
-	if (this->isSigned() == "yes")
+	time_t now = time(0);
+
+	tm *ltm = localtime(&now);
+	if (ltm->tm_sec % 2)
 	{
-		if (executor.getGrade() <= this->getExecGrade())
-		{
-			int random_var = std::rand() % 2;
-			if (random_var)
-			{
-				std::cout << "BZZZZZZ !!!! " << this->_target << " has been success robotomized" << std::endl;
-			}
-			else
-			{
-				std::cout << "BZZZZZZ !!!! " << this->_target << " is dead, robotomization failed" << std::endl;
-			}
-		}
-		else
-		{
-			throw AForm::GradeTooLowException();
-		}
+		std::cout << "BZZZZZZ !!!! " << this->_target << " has been success robotomized" << std::endl;
 	}
 	else
 	{
-		std::cout << "Can't be executed because " << this->getName() << " is not signed" << std::endl;
+		std::cout << "BZZZZZZ !!!! " << this->_target << " is dead, robotomization failed" << std::endl;
 	}
 	return ;
 }
