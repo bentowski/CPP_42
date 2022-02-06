@@ -6,14 +6,14 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/05 23:41:21 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/06 14:16:34 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucratie
+NAME = scale
 CXX = clang++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp
+SRCS	=	main.cpp Convert.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
@@ -35,6 +35,5 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) *_shrubberry
 
 re: fclean all
