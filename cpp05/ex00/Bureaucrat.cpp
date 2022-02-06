@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/06 04:07:45 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 04:32:11 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void Bureaucrat::gradeUp()
 {
 	if (this->_grade == 1)
 	{
+		// throw Bureaucrat::GradeTooHighException();
 		std::cout << "Bureaucrat " << this->getName() << " can't grade up more" << std::endl;
 	}
 	else
@@ -57,6 +58,7 @@ void Bureaucrat::gradeDown()
 {
 	if (this->_grade == 150)
 	{
+		// throw Bureaucrat::GradeTooLowException();
 		std::cout << "Bureaucrat " << this->getName() << " can't grade down more" << std::endl;
 	}
 	else

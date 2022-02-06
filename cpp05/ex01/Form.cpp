@@ -43,7 +43,7 @@ std::string Form::isSigned() const
 
 void Form::beSigned(Bureaucrat const & src)
 {
-	src.signForm(this->getName(), this->getSignGrade());
+	src.signForm(*this);
 	if (src.getGrade() <= this->getSignGrade())
 		this->_signed = 1;
 	else

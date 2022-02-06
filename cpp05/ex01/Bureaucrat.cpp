@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/06 04:07:26 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/06 04:12:46 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,15 @@ void Bureaucrat::gradeDown()
 	}
 }
 
-void Bureaucrat::signForm(std::string const formName, int const requiredGrade) const
+void Bureaucrat::signForm(Form const & form) const
 {
-	if (this->getGrade() <= requiredGrade)
+	if (this->getGrade() <= form.getSignGrade())
 	{
-		std::cout << this->getName() << " signs " << formName << std::endl;
+		std::cout << this->getName() << " signs " << form.getName() << std::endl;
 	}
 	else
 	{
-		std::cout << this->getName() << " cannot sign because his grade is too Low : " << requiredGrade << " is required" << std::endl;
+		std::cout << this->getName() << " cannot sign " << form.getName() << " because his grade is too Low : " << form.getSignGrade() << " is required" << std::endl;
 	}
 }
 

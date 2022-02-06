@@ -2,6 +2,8 @@
 # define FORM_H
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	public:
