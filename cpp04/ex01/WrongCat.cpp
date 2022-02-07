@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:34 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 19:02:49 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 11:24:12 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@ WrongCat::WrongCat()
 WrongCat::~WrongCat()
 {
   std::cout << "WrongCat default destructor" << std::endl;
-  return ;
-}
-
-void WrongCat::makeSound() const
-{
-  std::cout << "Meuuuh" << std::endl;
   return ;
 }
