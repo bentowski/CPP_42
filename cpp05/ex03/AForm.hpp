@@ -8,7 +8,7 @@ class AForm
 {
 	public:
 		AForm(std::string name, int signGrade, int execGrade);
-		~AForm();
+		virtual ~AForm();
 		std::string getName() const;
 		int getSignGrade() const;
 		int getExecGrade() const;

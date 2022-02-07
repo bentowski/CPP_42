@@ -6,15 +6,16 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/06 18:24:39 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/07 08:35:54 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucratie
 CXX = c++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp PresidentPardonForm.cpp \
-				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp \
+				Intern.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)

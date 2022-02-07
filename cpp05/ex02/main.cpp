@@ -6,13 +6,13 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 23:35:58 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 08:21:05 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "PresidentPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
@@ -198,10 +198,10 @@ int main()
 			try
 			{
 				std::cout << std::endl;
-				std::cout << "===== President Pardon Form =======" << std::endl;
+				std::cout << "===== Presidential Pardon Form =======" << std::endl;
 				std::cout << std::endl;
 				// =========================== Robotomy Form ===========================
-				PresidentPardonForm SecondForm("Lucia");
+				PresidentialPardonForm SecondForm("Lucia");
 				std::cout << std::endl;
 
 				// ============= Can't be signed ===============

@@ -4,7 +4,6 @@
 #include "PresidentialPardonForm.hpp"
 #include <exception>
 
-/* CONSTRUCTORS, DESTRUCTORS */
 
 Intern::Intern( void ) {
 
@@ -14,44 +13,27 @@ Intern::Intern( void ) {
 	return;
 }
 
-Intern::Intern( const Intern &Copy ) {
-
-	*this = Copy;
-	return;
-}
-
 Intern::~Intern( void ) {
 
 	return;
 }
 
-/* ASSIGNATION OPERATOR */
-
-Intern & Intern::operator= (const Intern &Copy ) {
-
-	if (this != &Copy)
-		*this = Intern(Copy);
-	return *this;
-}
-
-/* PUBLIC METHODS */
-
-Form *	Intern::newSCF( std::string const & target ) {
+AForm *	Intern::newSCF( std::string const & target ) {
 
 	return new ShrubberyCreationForm(target);
 }
 
-Form *	Intern::newRRF( std::string const & target ) {
+AForm *	Intern::newRRF( std::string const & target ) {
 
 	return new RobotomyRequestForm(target);
 }
 
-Form *	Intern::newPPF( std::string const & target ) {
+AForm *	Intern::newPPF( std::string const & target ) {
 
 	return new PresidentialPardonForm(target);
 }
 
-Form *	Intern::makeForm( std::string const & form, std::string const & target ) {
+AForm *	Intern::makeForm( std::string const & form, std::string const & target ) {
 
 	std::string	list_forms[NUM_FORM] = {
 		"shrubbery creation",
