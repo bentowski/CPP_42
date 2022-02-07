@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:44 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/07 20:27:37 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 20:50:40 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,21 @@
 int main()
 {
 	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 	std::cout << std::endl;
-	Dog tmp = basic;
-	std::cout << std::endl;
-	Dog *test = new Dog();
-	std::cout << std::endl;
-	Dog *mike = new Dog();
-	std::cout << std::endl;
-	*test = *mike;
-	delete test;
-	std::cout << std::endl;
-	mike->makeSound();
-	std::cout << std::endl;
-	delete mike;
-	std::cout << std::endl;
+	// Dog *test = new Dog();
+	// std::cout << std::endl;
+	// Dog *mike = new Dog();
+	// std::cout << std::endl;
+	// *test = *mike;
+	// // delete test;
+	// std::cout << std::endl;
+	// mike->makeSound();
+	// std::cout << std::endl;
+	// delete mike;
+	// std::cout << std::endl;
 	int x = 4;
 	int y = 0;
 	Animal* meta[x];
