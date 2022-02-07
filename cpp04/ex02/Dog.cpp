@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:39 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/01/30 17:29:54 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 10:54:39 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ Dog::Dog()
   return ;
 }
 
+Dog::Dog( Dog & src )
+{
+	std::cout << "Dog Copy constructor called" << std::endl;
+	*this = src;
+	return;
+}
+
 Dog::~Dog()
 {
   delete brain;
@@ -32,4 +39,15 @@ void Dog::makeSound() const
 {
   std::cout << "Wouf !" << std::endl;
   return ;
+}
+
+Dog & Dog::operator= (const Dog & src )
+{
+
+	std::cout << "Dog assignation operator called" << std::endl;
+	if (this != &src)
+	{
+		this->_brain = new Brain(*src._brain);
+	}
+	return *this;
 }

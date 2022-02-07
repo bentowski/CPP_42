@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/06 04:31:06 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 08:59:12 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main()
 		}
 		catch (std::exception & e)
 		{
-			std::cout << "Bureaucrat Bob has been grade up" << std::endl;
+			std::cout << "Bureaucrat Bob can't grade up more" << std::endl;
 			std::cout << std::endl;
 		}
 		try
@@ -66,12 +66,13 @@ int main()
 		}
 		catch (std::exception & e)
 		{
-			std::cout << "Bureaucrat Bob has been grade up" << std::endl;
+			std::cout << "Bureaucrat Bob can't grade up more" << std::endl;
 			std::cout << std::endl;
 		}
 		Bureaucrat sully("Sully", 151);
 		std::cout << sully << std::endl;
 		std::cout << std::endl;
+		std::cout << "Ohohh, if that is print i have a problem" << std::endl;
 	}
 	catch (std::exception & e)
 	{

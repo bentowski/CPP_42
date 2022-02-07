@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:36 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/06 18:32:50 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 10:54:55 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class Cat: public Animal
 {
   public:
     Cat();
+	Cat(Cat & src);
     ~Cat();
     void makeSound() const;
+	Cat& operator=(Cat const & src);
   private:
-    Cat(Cat & src);
-    Cat& operator=(Cat const & src);
     Brain* brain;
 };
 

@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/05 19:48:28 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 09:02:28 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,28 @@ int main()
 			Form canBeSigned("rb13", 149, 148);
 			std::cout << canBeSigned << std::endl;
 			std::cout << std::endl;
-
-			canBeSigned.beSigned(created);
-			std::cout << canBeSigned << std::endl;
-			std::cout << std::endl;
-
-			cantBeSigned.beSigned(created);
-			std::cout << cantBeSigned << std::endl;
-			std::cout << std::endl;
-
+			try
+			{
+				canBeSigned.beSigned(created);
+				std::cout << canBeSigned << std::endl;
+				std::cout << std::endl;
+			}
+			catch (std::exception & e)
+			{
+				std::cout << "The Bureaucrat's grade is too low" << std::endl;
+				std::cout << std::endl;
+			}
+			try
+			{
+				cantBeSigned.beSigned(created);
+				std::cout << cantBeSigned << std::endl;
+				std::cout << std::endl;
+			}
+			catch (std::exception & e)
+			{
+				std::cout << "The Bureaucrat's grade is too low" << std::endl;
+				std::cout << std::endl;
+			}
 			Form cantBeCreate("rb14", 0, 151);
 			std::cout << cantBeCreate << std::endl;
 			std::cout << std::endl;
