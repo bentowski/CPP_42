@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:42 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/07 20:31:30 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 22:37:32 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ class Dog: public Animal
     ~Dog();
   	Dog(Dog & src);
   	Dog& operator=(Dog const & src);
+    Brain* getBrainAdress();
     void makeSound() const;
+    void setBrain();
+    void setBrain(int index, std::string value);
+    void getBrain();
+    void getBrain(int index);
   private:
     Brain* _brain;
 };
