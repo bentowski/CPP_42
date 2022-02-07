@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:13:39 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/07 21:02:02 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 22:39:30 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,39 @@ Dog & Dog::operator= (const Dog & src )
     *this->_brain = *src._brain;
 	}
 	return *this;
+}
+
+Brain* Dog::getBrainAdress()
+{
+  return (this->_brain);
+}
+
+void Dog::setBrain()
+{
+  this->_brain->setIdeas();
+  return ;
+}
+
+void Dog::setBrain(int index, std::string value)
+{
+  this->_brain->setIdeas(index, value);
+  return ;
+}
+
+void Dog::getBrain()
+{
+  int x = 0;
+
+  while (x < 100)
+  {
+    this->_brain->printIdeas(x);
+    x++;
+  }
+  return ;
+}
+
+void Dog::getBrain(int index)
+{
+  this->_brain->printIdeas(index);
+  return ;
 }

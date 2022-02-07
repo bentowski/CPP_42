@@ -9,8 +9,11 @@ class Brain
   	Brain(Brain & src);
     ~Brain();
   	Brain& operator=(Brain const & src);
+    void setIdeas();
+    void setIdeas(int index, std::string value);
+    void printIdeas(int index);
   private:
-    std::string ideas[100];
+    std::string _ideas[100];
 };
 
 #endif

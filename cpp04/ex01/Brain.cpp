@@ -26,10 +26,34 @@ Brain & Brain::operator= (const Brain & src )
 	{
 		while (x < 100)
 		{
-			this->ideas[x] = src.ideas[x];
+			this->_ideas[x] = src._ideas[x];
 			x++;
 		}
 		std::cout << "Brain Assignation operator called" << std::endl;
 	}
 	return *this;
+}
+
+void Brain::setIdeas()
+{
+  int x = 0;
+
+  while (x < 100)
+  {
+    this->_ideas[x] = "none";
+    x++;
+  }
+  return ;
+}
+
+void Brain::setIdeas(int index, std::string value)
+{
+  this->_ideas[index] = value;
+  return ;
+}
+
+void Brain::printIdeas(int index)
+{
+  std::cout << this->_ideas[index] << std::endl;
+  return ;
 }
