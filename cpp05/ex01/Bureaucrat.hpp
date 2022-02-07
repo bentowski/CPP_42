@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:31 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/06 04:11:06 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 23:31:19 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,23 @@ class Form;
 class Bureaucrat
 {
 	public:
+		Bureaucrat() : _name("Anonymous"), _grade(150) {};
 		Bureaucrat(std::string name, int initialGrade);
+		Bureaucrat(Bureaucrat & src);
 		~Bureaucrat();
+
 		std::string getName() const;
 		int getGrade() const;
 		void gradeUp();
 		void gradeDown();
 		void signForm(Form const & form) const;
+		Bureaucrat& operator=(Bureaucrat const & src);
+
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:
 		std::string const _name;
 		int _grade;
-		Bureaucrat();
-		int& operator=(Bureaucrat const & src);
-		Bureaucrat(Bureaucrat & src);
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);

@@ -5,14 +5,17 @@
 class PresidentialPardonForm : public AForm
 {
 	public:
+		PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5), _target("Everybody") {};
 		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm();
+
 		void action();
+
 	private:
-		PresidentialPardonForm();
-		int& operator=(PresidentialPardonForm const & src);
-		PresidentialPardonForm(PresidentialPardonForm & src);
 		std::string _target;
+
+		PresidentialPardonForm& operator=(PresidentialPardonForm const & src);
+		PresidentialPardonForm(PresidentialPardonForm & src);
 };
 
 #endif

@@ -12,6 +12,13 @@ _name(name), _signed(0), _signGrade(signGrade), _execGrade(execGrade)
 	return ;
 }
 
+Form::Form(Form & src):
+_name(src.getName()), _signGrade(src.getSignGrade()), _execGrade(src.getExecGrade())
+{
+	this->_signed = 0;
+	return ;
+}
+
 Form::~Form()
 {
 	std::cout << "Form default destructor called" << std::endl;

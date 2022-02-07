@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/07 08:59:12 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 23:30:52 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@ int main()
 {
 	try
 	{
+		Bureaucrat test;
+		std::cout << test << std::endl << std::endl;
+		
 		Bureaucrat mike("Mike", 148);
 		std::cout << mike << std::endl;
+		std::cout << std::endl;
+
+		Bureaucrat hello(mike);
+		std::cout << hello << std::endl;
 		std::cout << std::endl;
 		try
 		{

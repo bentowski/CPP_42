@@ -6,7 +6,7 @@
 /*   By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:59:27 by bbaudry           #+#    #+#             */
-/*   Updated: 2022/02/07 08:21:05 by bbaudry          ###   ########.fr       */
+/*   Updated: 2022/02/07 23:46:33 by bbaudry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int main()
 			Bureaucrat mike("Mike", 71);
 			Bureaucrat denis("Denis", 25);
 			Bureaucrat sully("Sully", 1);
+
+			ShrubberyCreationForm test;
+			std::cout << test << std::endl;
 
 			// =============== Shrubbery Form =============
 			try

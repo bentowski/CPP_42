@@ -17,22 +17,25 @@
 				&&   && & &| &| /& & % ()& /&&\n\
 				 ()&_---()&\\&\\|&&-&&--%---()~\n\
 					  &&    \\|||\n\
-							 |||\n\
-							 |||\n\
-							 |||\n\
-					  , -=-~  .-^- _\n"
+									 	|||\n\
+									 	|||\n\
+									 	|||\n\
+								 	, -=-~  .-^- _\n"
 
 class ShrubberyCreationForm : public AForm
 {
 	public:
+		ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 145, 137), _target("Everywhere") {};
 		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
+
 		void action();
+
 	private:
-		ShrubberyCreationForm();
-		int& operator=(ShrubberyCreationForm const & src);
-		ShrubberyCreationForm(ShrubberyCreationForm & src);
 		std::string _target;
+
+		ShrubberyCreationForm& operator=(ShrubberyCreationForm const & src);
+		ShrubberyCreationForm(ShrubberyCreationForm & src);
 };
 
 #endif

@@ -8,12 +8,15 @@ class Form
 {
 	public:
 		Form(std::string name, int signGrade, int execGrade);
+		Form(Form & src);
 		~Form();
+
 		std::string getName() const;
 		int getSignGrade() const;
 		int getExecGrade() const;
 		std::string isSigned() const;
 		void beSigned(Bureaucrat const & src);
+
 		class GradeTooLowException : public std::exception {};
 		class GradeTooHighException : public std::exception {};
 	private:
@@ -21,9 +24,9 @@ class Form
 		bool _signed;
 		int const _signGrade;
 		int const _execGrade;
+
 		Form();
-		int& operator=(Form const & src);
-		Form(Form & src);
+		Form& operator=(Form const & src);
 };
 
 std::ostream & operator<<(std::ostream & o, Form const & rhs);

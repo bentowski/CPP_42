@@ -6,14 +6,17 @@
 class RobotomyRequestForm : public AForm
 {
 	public:
+		RobotomyRequestForm() : AForm("Robotomy Request Form", 72, 45), _target("Everybody") {};
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();
+
 		void action();
+
 	private:
-		RobotomyRequestForm();
-		int& operator=(RobotomyRequestForm const & src);
-		RobotomyRequestForm(RobotomyRequestForm & src);
 		std::string _target;
+
+		RobotomyRequestForm& operator=(RobotomyRequestForm const & src);
+		RobotomyRequestForm(RobotomyRequestForm & src);
 };
 
 #endif

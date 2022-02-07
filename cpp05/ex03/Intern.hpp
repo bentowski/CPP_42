@@ -13,9 +13,9 @@ class AForm;
 class Intern {
 
 	public:
-
 		Intern();
 		~Intern();
+
 		AForm *			makeForm( std::string const & form, std::string const & target ) ;
 		AForm *			newSCF( std::string const & target ) ;
 		AForm *			newRRF( std::string const & target ) ;
@@ -24,10 +24,10 @@ class Intern {
 		class 			UnknownFormException : public std::exception {};
 
 	private:
-		Intern( Intern const &Copy );
-		Intern &		operator = ( const Intern & toCopy );
 		AForm *			(Intern::*f[NUM_FORM])( std::string const & target );
 
+		Intern&		operator=(Intern & toCopy);
+		Intern( Intern const &Copy );
 };
 
 std::ostream&	operator<<(std::ostream& stream, Intern const& Intern);
