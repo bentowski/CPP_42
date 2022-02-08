@@ -1,5 +1,6 @@
 #include <iostream>
 #include "whatever.hpp"
+#include "Human.hpp"
 
 int main()
 {
@@ -46,7 +47,7 @@ int main()
   std::cout << "max( g, h ) = " << ::max( g, h ) << std::endl;
 
   std::cout << std::endl;
-  
+
   int &i = a;
   int &j = b;
 
@@ -55,6 +56,17 @@ int main()
   std::cout << "i = " << i << ", j = " << j << std::endl;
   std::cout << "min( i, j ) = " << ::min( i, j ) << std::endl;
   std::cout << "max( i, j ) = " << ::max( i, j ) << std::endl;
+
+  std::cout << std::endl;
+
+  Human k("marco", 42);
+	Human l("polo", 21);
+
+	std::cout << "k = " << k << ", l = " << l << std::endl;
+	::swap( k, l );
+	std::cout << "k = " << k << ", l = " << l << std::endl;
+	std::cout << "min( k, l ) = " << ::min( k, l ) << std::endl;
+	std::cout << "max( k, l ) = " << ::max( k, l ) << std::endl;
 
   return 0;
 }
