@@ -5,12 +5,6 @@
 # include <deque>
 # include <iostream>
 
-using std::stack;
-using std::deque;
-using std::list;
-using std::cout;
-using std::endl;
-
 int test_with_a_stack()
 {
 	MutantStack<int> mstack;
@@ -18,11 +12,11 @@ int test_with_a_stack()
 	mstack.push(5);									// stack : 5
 	mstack.push(17);								// stack : 5 17
 
-	cout << "top: " << mstack.top() << endl;
+	std::cout << "top: " << mstack.top() << std::endl;
 
 	mstack.pop();									// stack : 5
 
-	cout << "size: " << mstack.size() << endl;
+	std::cout << "size: " << mstack.size() << std::endl;
 
 	mstack.push(3);
 	mstack.push(5);
@@ -33,18 +27,18 @@ int test_with_a_stack()
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 
-	cout << "it: " << *it << endl;
+	std::cout << "it: " << *it << std::endl;
 
 	++it;
 	--it;
 
 	std::advance (it, 2);
 
-	cout << "distance: " << std::distance(it, ite) << endl;
+	std::cout << "distance: " << std::distance(it, ite) << std::endl;
 
 	while (it != ite)
 	{
-		cout << "elem: " << *it << endl;
+		std::cout << "elem: " << *it << std::endl;
 		++it;
 	}
 
@@ -54,16 +48,16 @@ int test_with_a_stack()
 
 int test_with_a_list()
 {
-	list<int> mlist;
+	std::list<int> mlist;
 
 	mlist.push_back(5);
 	mlist.push_back(17);
 
-	cout << "top: " << mlist.back() << endl;
+	std::cout << "top: " << mlist.back() << std::endl;
 
 	mlist.pop_back();
 
-	cout << "size: " << mlist.size() << endl;
+	std::cout << "size: " << mlist.size() << std::endl;
 
 	mlist.push_back(3);
 	mlist.push_back(5);
@@ -71,21 +65,21 @@ int test_with_a_list()
 	//[...]
 	mlist.push_back(0);
 
-	list<int>::iterator it = mlist.begin();
-	list<int>::iterator ite = mlist.end();
+	std::list<int>::iterator it = mlist.begin();
+	std::list<int>::iterator ite = mlist.end();
 
-	cout << "it: " << *it << endl;
+	std::cout << "it: " << *it << std::endl;
 
 	++it;
 	--it;
 
 	std::advance (it, 2);
 
-	cout << "distance: " << std::distance(it, ite) << endl;
+	std::cout << "distance: " << std::distance(it, ite) << std::endl;
 
 	while (it != ite)
 	{
-		cout << "elem: " << *it << endl;
+		std::cout << "elem: " << *it << std::endl;
 		++it;
 	}
 
@@ -95,11 +89,11 @@ int test_with_a_list()
 
 int main( void ) {
 
-	cout << "----- STACK -----" << endl;
+	std::cout << "----- STACK -----" << std::endl;
 	test_with_a_stack();
 
-	cout << endl;
+	std::cout << std::endl;
 
-	cout << "----- LIST -----" << endl;
+	std::cout << "----- LIST -----" << std::endl;
 	test_with_a_list();
 }

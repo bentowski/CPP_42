@@ -1,6 +1,5 @@
 #ifndef EASYFIND_H
 # define EASYFIND_H
-
 # include <algorithm>
 # include <exception>
 
@@ -16,7 +15,7 @@ typename T::iterator	easyfind(T & container, int n) {
 
 	typename	T::iterator it;
 
-	it = find (container.begin(), container.end(), n);
+	it = find(container.begin(), container.end(), n);
 	if (it == container.end())
 		throw ElemNotFound();
 	return it;

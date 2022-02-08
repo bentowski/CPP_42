@@ -1,22 +1,13 @@
 #ifndef __MUTANT_STACK_H__
 # define __MUTANT_STACK_H__
-
 # include <algorithm>
 # include <stack>
 # include <deque>
 # include <exception>
 # include <iostream>
 
-using std::stack;
-using std::deque;
-using std::exception;
-
-// ************************************************************************** //
-//                            	MutantStack Class                             //
-// ************************************************************************** //
-
 template <typename T>
-class MutantStack : public stack<T> {
+class MutantStack : public std::stack<T> {
 
 	public:
 
@@ -27,18 +18,18 @@ class MutantStack : public stack<T> {
 
 		void	init_deq( void ) {
 
-			stack<T> cpy = *this;
+			std::stack<T> cpy = *this;
 
 			for (unsigned long i = 0; i < this->size(); i++) {
 				_deq.push_front( cpy.top() );
 				cpy.pop();
 			}
-		} ;
+		};
 
 	private:
 
-	deque<T>	_deq;
+	std::deque<T>	_deq;
 
 };
 
-#endif /* __MUTANT_STACK_H__ */
+#endif

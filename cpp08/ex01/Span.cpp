@@ -1,12 +1,6 @@
 #include "Span.hpp"
 # include <algorithm>
 
-using std::max_element;
-using std::min_element;
-using std::nth_element;
-using std::endl;
-using std::abs;
-
 Span &			Span::operator=( Span const & toCopy ) {
 
 	if ( this != &toCopy ) {
@@ -43,15 +37,15 @@ unsigned int 	Span::shortestSpan( void ) const {
 	if (std::adjacent_find(copy.begin(), copy.end()) != copy.end())
 		return 0;
 	std::transform (copy.begin() + 1, copy.end(), copy.begin(), diff.begin(), std::minus<int>());
-	return *min_element(diff.begin(), diff.end());
+	return *std::min_element(diff.begin(), diff.end());
 }
 
 unsigned int 	Span::longestSpan( void ) const {
 
 	if ( _vec.size() < 2 )
 		throw Span::NoSpan();
-	int max = *max_element(_vec.begin(), _vec.end());
-	int min = *min_element(_vec.begin(), _vec.end());
+	int max = *std::max_element(_vec.begin(), _vec.end());
+	int min = *std::min_element(_vec.begin(), _vec.end());
 	unsigned int res = max - min;
 	return res;
 }
