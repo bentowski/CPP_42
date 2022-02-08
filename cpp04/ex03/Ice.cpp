@@ -8,13 +8,13 @@ Ice::Ice(): AMateria("ice")
 
 Ice::~Ice()
 {
-	std::cout << Default Ice destructeur called" << std::endl;
+	std::cout << "Default Ice destructeur called" << std::endl;
 	return;
 }
 
 AMateria* Ice::clone() const
 {
-	AMateria* newIce = newIce();
+	AMateria* newIce = new Ice();
 	return newIce;
 }
 

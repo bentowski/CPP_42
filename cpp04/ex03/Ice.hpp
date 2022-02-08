@@ -11,6 +11,6 @@ class Ice : public AMateria
 		void use(ICharacter& target);
 	private:
 		Ice(Ice & src);
-    Ice& operator=(Ice const & src);
+    	Ice& operator=(Ice const & src);
 };
 #endif

@@ -18,6 +18,9 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	// tmp = me->saveUnequip(1);
+	// me->unequip(0);
+
 
 	ICharacter* bob = new Character("bob");
 

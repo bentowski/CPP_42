@@ -11,7 +11,7 @@ class Cure : public AMateria
 		void use(ICharacter& target);
 	private:
 		Cure(Cure & src);
-   	Cure& operator=(Cure const & src);
+   		Cure& operator=(Cure const & src);
 };
 
 #endif

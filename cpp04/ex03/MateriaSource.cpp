@@ -7,6 +7,10 @@ MateriaSource::MateriaSource( void )
 
 MateriaSource::~MateriaSource( void )
 {
+	for (int i = 0; i < 4; i++)
+	{
+        delete _inventory[i];
+    }
 	return;
 }
 
@@ -15,9 +19,11 @@ void MateriaSource::learnMateria( AMateria* m )
     for (int i = 0; i < 4; i++) {
         if (!_inventory[i]) {
             _inventory[i] = m->clone();
+			delete m;
             return ;
         }
     }
+	delete m;
     return ;
 }
 
