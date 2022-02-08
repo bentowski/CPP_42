@@ -7,8 +7,6 @@ using std::nth_element;
 using std::endl;
 using std::abs;
 
-/* OPERATORS */
-
 Span &			Span::operator=( Span const & toCopy ) {
 
 	if ( this != &toCopy ) {
@@ -18,8 +16,6 @@ Span &			Span::operator=( Span const & toCopy ) {
 	}
 	return *this;
 }
-
-/* METHODS */
 
 void			Span::addNumber( int nb ) {
 

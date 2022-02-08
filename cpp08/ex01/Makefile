@@ -6,14 +6,14 @@
 #    By: bbaudry <bbaudry@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 17:13:47 by bbaudry           #+#    #+#              #
-#    Updated: 2022/02/06 21:23:59 by bbaudry          ###   ########.fr        #
+#    Updated: 2022/02/08 01:19:08 by bbaudry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = span
 CXX = c++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp Span.cpp
+SRCS	=	main.cpp Span.cpp tests.cpp
 SRCS_DIR = ./
 OBJS_DIR 	= 	objects/
 OBJ 		= 	$(SRCS:.cpp=.o)
